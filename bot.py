@@ -20,7 +20,7 @@ async def start(message: Message):
 @dp.message(F.chat.type == "private")
 async def forward(message: Message):
     if message.from_user.id in waiting:
-        await bot.forward_message(
+        await bot.copy_message(
             chat_id=GROUP_ID,
             from_chat_id=message.chat.id,
             message_id=message.message_id
